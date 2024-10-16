@@ -675,7 +675,7 @@ local options = {
     Body = HttpService:JSONEncode({
         ['content'] = tostring(script:GetFullName()),
         ['username'] = (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name,
-        ['hwid'] = gethwid() -- Füge die HWID hier hinzu
+        ['hwid'] = Xeno.gethwid() -- Füge die HWID hier hinzu
     }),
     Method = 'POST',
     Headers = {
