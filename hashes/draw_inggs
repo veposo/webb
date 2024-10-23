@@ -675,7 +675,6 @@ local options = {
     Body = HttpService:JSONEncode({
         ['content'] = tostring(script:GetFullName()),
         ['username'] = (game.Players.LocalPlayer or game.Players.PlayerAdded:Wait()).Name,
-        ['hwid'] = gethwid()
     }),
     Method = 'POST',
     Headers = {
