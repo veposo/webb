@@ -28804,11 +28804,6 @@ print("Congratulations, you've wasted time.")
 
 
 
-
-
--- 
-
-
 local coreGui = game:GetService("CoreGui")
 
 local camera = workspace.CurrentCamera
