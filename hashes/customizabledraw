@@ -647,22 +647,24 @@ function DrawingLib.createFrame()
 	})
 end
 function injectionmessagesample()
-    local contents = nil
-    pcall(function()
-        contents = readfile("config.yaml")
-    end)
+    local contents = readfile("config.yaml")
     if not contents then
         return "Error receiving executor related content"
     end
+
     local lines = {}
+
     for line in contents:gmatch("[^\r\n]+") do
         table.insert(lines, line)
     end
+
     if #lines < 3 then
         return "Error: Insufficient lines in config.yaml"
     end
+
     local inmsg = lines[3]
     return inmsg
+
 end
 task.spawn(function()
 	print(injectionmessagesample())
